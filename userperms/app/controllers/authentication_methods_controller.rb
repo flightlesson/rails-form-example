@@ -3,12 +3,12 @@ class AuthenticationMethodsController < ApplicationController
   def index
     Rails.logger.info("AuthenticationMethodsController#index: " + params.to_s)
     begin
-      q = AuthenticationMethod.select("method,descr")
+      q = AuthenticationMethod.select("id,method,descr")
       rows = q.all
       respond_to do |format|
         format.json { render json: rows }
       end
-    rescue Exception => e
+    rescue => e
       Rails.logger.info("rescue: " + e.class.to_s + ": " + e.inspect)
       respond_to do |format|
         format.json {render json: {error: e}}
@@ -28,7 +28,7 @@ class AuthenticationMethodsController < ApplicationController
       respond_to do |format|
         format.json {render json: {error: e.class.to_s}}
       end
-    rescue Exception => e
+    rescue => e
       Rails.logger.info("rescue: " + e.class.to_s + ": " + e.inspect)
       respond_to do |format|
         format.json {render json: {error: e}}
@@ -48,7 +48,7 @@ class AuthenticationMethodsController < ApplicationController
       respond_to do |format|
         format.json {render json: {error: e.class.to_s}}
       end
-    rescue Exception => e
+    rescue => e
       Rails.logger.info("rescue: " + e.class.to_s + ": " + e.inspect)
       respond_to do |format|
         format.json {render json: {error: e}}
@@ -68,7 +68,7 @@ class AuthenticationMethodsController < ApplicationController
       respond_to do |format|
         format.json {render json: {error: e.class.to_s}}
       end
-    rescue Exception => e
+    rescue => e
       Rails.logger.info("rescue: " + e.class.to_s + ": " + e.inspect)
       respond_to do |format|
         format.json {render json: {error: e}}

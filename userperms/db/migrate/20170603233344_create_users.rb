@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :username, null: false
       t.string :realname
-      t.belongs_to :authentication_methods
+      t.belongs_to :authentication_method
 
       t.timestamps
     end
