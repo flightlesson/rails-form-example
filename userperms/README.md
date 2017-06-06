@@ -1,24 +1,13 @@
-# README
+# Rails experiments:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Back-end Front-end impedence mismatch:
 
-Things you may want to cover:
+For example, the front wants to provide a user editor form that contains a multiselect for choosing which roles the user has. But the back end doesn't easily provide a list like
+```
+[{"id":"1","role":"admin"},{"id":"2","role":"user","selected":true}]
+```
 
-* Ruby version
+## Migration issues:
 
-* System dependencies
+Can migrations really produce an Enterprise-quality database?
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
