@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'portals#index'
   get 'index', to: 'portals#index', format: 'html'
 
+  get 'portal/:page', to: 'portals#index', format: 'html'
+
   resources :authentication_methods, only: [:index, :create, :update, :destroy], format: 'json', path: 'api/authentication_methods'
   resources :permissions,            only: [:index, :create, :update, :destroy], format: 'json', path: 'api/permissions' do
     resources :roles,                only: [:index, :create, :update, :destroy], format: 'json'
